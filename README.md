@@ -1,128 +1,239 @@
 
-# Hotel Revenue Analytics Dashboard (Power BI)
+# Hospitality Revenue Analytics Dashboard (Power BI)
 
-Power BI dashboard analyzing hotel performance across multiple cities and properties.
-The report focuses on **revenue, occupancy, bookings, and room category performance** to support data-driven decision-making in the hospitality domain.
+An end-to-end **Business Intelligence Dashboard** built using **Power BI** to analyze hotel performance across multiple cities, properties, room categories, and booking platforms.
+
+This project focuses on revenue optimization, occupancy analysis, cancellation behavior, and customer satisfaction tracking to support data-driven decision-making in the hospitality industry.
 
 ---
 
 ## Project Overview
 
-This project delivers an interactive **Hotel Revenue Analytics Dashboard** using **Power BI** that helps stakeholders:
+The Hospitality Revenue Analytics Dashboard transforms structured hotel booking data into interactive visual insights.
 
-* Track key revenue and occupancy KPIs
-* Compare performance across cities and properties
-* Analyze booking trends and customer behavior
-* Evaluate room category performance
+It enables stakeholders to:
+
+* Monitor revenue and booking KPIs
+* Track occupancy and capacity utilization
+* Analyze cancellation trends
+* Compare city and property performance
+* Evaluate room category efficiency
+* Measure customer satisfaction through ratings
 * Identify high-performing booking platforms
 
-The dashboard transforms raw hotel booking data into **actionable business insights**.
+This dashboard acts as a centralized performance monitoring solution for hotel management.
 
 ---
 
-## Dataset
+## Data Model & Architecture
 
-The project uses structured hotel booking data stored in **Excel/CSV** format and modeled using a star schema.
+The dataset is modeled using a **Star Schema** in Power BI for optimized performance and scalability.
 
-### Fact Tables
+### Fact Table
 
-* `fact_bookings` – booking-level details (dates, revenue, booking status, platform, room category, etc.)
+**fact_bookings**
+
+* Booking ID
+* Booking Status (Checked-out, Cancelled, No Show)
+* Revenue
+* Booking Platform
+* Room Category
+* Check-in / Check-out Dates
+* Ratings
+* Capacity & Occupancy Metrics
 
 ### Dimension Tables
 
-* `dim_hotels` – hotel and city information
-* `dim_date` – calendar table for time-based analysis
+* **dim_hotels** – Property and City details
+* **dim_date** – Calendar hierarchy (Year, Month, Week)
+* **dim_rooms** – Room Categories (RT1, RT2, RT3, RT4)
 
 ---
 
-## Power BI Report Structure
+## Dashboard Structure
 
-The report consists of **4 main pages**:
-
-### 1.Hotel Revenue Dashboard (Executive Summary)
-
-* KPI cards: **Total Revenue, Occupancy %, ADR, RevPAR**
-* Total Revenue trend by **Year, Quarter, Month, and Day**
-* Total Revenue by City
-* City and Date slicers for interactive filtering
+The Power BI report consists of **5 Analytical Pages**:
 
 ---
 
-### 2.Revenue Analysis
+## 1️. Overall Hospitality Analysis
 
-* Total Revenue by Property
-* Total Revenue by City
-* Total Revenue by Booking Platform
+### KPIs
 
----
+* Total Revenue (1.7bn)
+* Occupancy % (58%)
+* Average Rating (3.62)
+* Cancellation Rate (24.8%)
+* LDC (Lead Days Count)
 
-### 3.Booking Trends
+### Visualizations
 
-* Total Bookings by Day Type (Weekday vs Weekend)
-* Total Bookings by Booking Status (Checked Out, Cancelled, No Show)
-* Total Bookings by Year
-
----
-
-### 4.City Performance & Room Analysis
-
-* City-wise performance table:
-
-  * Total Revenue
-  * ADR
-  * RevPAR
-  * Occupancy %
+* Revenue by City
 * Occupancy % by City
+* Average Rating by City
+* Weekly Trend (Revenue & Rating)
+* Booking Platform Contribution
+* Weekend vs Weekday Occupancy Ratio
+* Property-Level Performance Table
 
-* Room category analysis:
-
-  * ADR
-  * Total Revenue
-  * Total Bookings
-* ADR comparison between **Business** and **Luxury** categories
-
----
-
-## Key Metrics / DAX Measures
-
-Key business measures created using **DAX**:
-
-* **Total Revenue**
-* **Total Bookings**
-* **Occupancy %**
-* **ADR (Average Daily Rate)**
-* **RevPAR (Revenue per Available Room)**
-* **Cancellation Rate %**
-
-These measures drive all KPIs and visuals in the dashboard.
+**Purpose:**
+Provides a high-level executive summary of overall business performance.
 
 ---
 
-## Tech Stack
+## 2. Monthly Analysis
 
-* **Power BI Desktop** – data modeling & visualization
-* **DAX** – calculated measures and KPIs
-* **Power Query** – data cleaning and transformation
-* **Excel / CSV** – source datasets
+### KPIs
+
+* Monthly Revenue
+* Occupancy %
+* Average Rating
+* Cancellation Rate
+* LDC
+
+### Visualizations
+
+* Capacity vs Bookings vs Cancelled Bookings (Room Category Comparison)
+* Revenue Calendar View (Day-wise Analysis)
+* Property-wise Monthly Performance Table
+* Platform-wise Bookings vs Cancelled Bookings
+* Month Filters (May, June, July)
+
+**Purpose:**
+Analyzes operational efficiency and monthly booking patterns.
+
 
 ---
 
-## Repository Contents
+## 3. Property Performance Analysis
 
-* `Hotel_Revenue_Analytics.pbix` – Power BI report file
-* `data/` – source datasets
-* `screenshots/` – dashboard screenshots
-* `Queries/` – Power Query transformations / DAX documentation
-* `model_view/` – Power BI data model screenshot
-* `README.md` – project documentation
+### KPIs
+
+* Total Bookings (135K)
+* Occupancy % (58%)
+* Cancellation Rate (24.8%)
+* Total Capacity (233K)
+* Average Rating (3.62)
+
+### Visualizations
+
+* Total Bookings by Property
+* Revenue Realized by City
+* Occupancy % by Room Category (Donut Chart)
+* Detailed Property Performance Table
+* Rating vs Revenue Analysis
+
+**Purpose:**
+Compares individual property efficiency, utilization, and revenue contribution.
 
 ---
 
-## How to Use
+## 4. Cancellation Analysis
 
-1. Clone or download this repository.
-2. Open `Hotel_Revenue_Analytics.pbix` in **Power BI Desktop**.
+### KPIs
+
+* Total Bookings (135K)
+* Revenue Generated (2bn)
+* Total Cancelled Bookings (33K)
+* Cancellation Rate (24.8%)
+
+### Visualizations
+
+* Cancelled Bookings by City
+* Cancelled Bookings by Room Category (Treemap)
+* Cancelled Bookings by Year
+* Booking Status Distribution (Donut Chart)
+* Occupancy % vs Cancellation Rate
+* Cancelled Bookings by Weekday (Waterfall Chart)
+* Property-wise Cancellation Table
+
+**Purpose:**
+Identifies cancellation patterns to reduce revenue leakage and improve forecasting accuracy.
+
+---
+
+## 5. Customer & Rating Analysis
+
+### KPIs
+
+* Average Rating (3.62)
+* Occupancy %
+* Ratings Given (205K)
+* Revenue Realized (2bn)
+
+### Visualizations
+
+* Average Rating by Year
+* Average Rating by Room Category
+* Average Rating by City
+* Rating vs Revenue Scatter Plot
+* Booking Gauge (Total Bookings)
+* City-wise Rating, Revenue & Cancellation Matrix
+
+**Purpose:**
+Evaluates customer satisfaction and its impact on revenue performance.
+
+---
+
+## Key DAX Measures
+
+The following calculated measures drive all KPIs and visualizations:
+
+* Total Revenue
+* Total Bookings
+* Total Capacity
+* Occupancy %
+* Average Rating
+* Cancellation Rate %
+* Revenue Realized
+* LDC (Lead Days Count)
+* Weekend vs Weekday Occupancy Ratio
+
+---
+
+## Tools & Technologies
+
+* **Power BI Desktop** – Data Modeling & Visualization
+* **DAX** – Business Calculations
+* **Power Query** – Data Cleaning & Transformation
+* **Excel / CSV** – Source Data
+
+---
+
+## Repository Structure
+
+```
+Hospitality-Revenue-Analytics/
+│
+├── Hospitality_Analytics.pbix
+├── data/
+├── screenshots/
+├── model_view/
+└── README.md
+```
+
+---
+
+## How to Run the Project
+
+1. Clone this repository.
+2. Open the `.pbix` file using **Power BI Desktop**.
 3. Update data source paths if required.
-4. Refresh the report and explore dashboards using slicers.
+4. Refresh the dataset.
+5. Use slicers (City, Property, Platform, Month, Week) to interact with dashboards.
 
 ---
+
+## Business Impact
+
+This dashboard helps hotel management to:
+
+* Reduce revenue loss from cancellations
+* Improve occupancy planning
+* Optimize booking platform strategies
+* Identify high-performing properties
+* Enhance customer satisfaction
+* Drive overall revenue growth
+
+---
+
