@@ -205,7 +205,7 @@ The following calculated measures drive all KPIs and visualizations:
 ```
 Hospitality-Revenue-Analytics/
 │
-├── Hospitality_Analytics.pbix
+├── Hotel-Revenue-Analytics.pbix
 ├── data/
 ├── screenshots/
 ├── model_view/
